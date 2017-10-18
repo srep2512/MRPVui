@@ -1,7 +1,8 @@
 /* eslint-disable  */
 const configFile = {
-    API: 'http://localhost:3000/',
-    STEPS: 'http://localhost:3000/hello',  
+    API: 'https://htwmrp.herokuapp.com/',
+    STEPS: 'https://htwmrp.herokuapp.com/giffler',
+    AlgStep:'https://htwmrp.herokuapp.com/gifflerStep'
 }
 
 

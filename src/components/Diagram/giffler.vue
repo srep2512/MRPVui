@@ -7,7 +7,7 @@
       <g>
          <g style="visibility: visible; " transform="translate(0.5,0.5)">
             <rect x="335.89" y="-6.4" width="78.4" height="19.6" fill="gray" stroke="gray" transform="translate(1.96,2.94)" opacity="1" />
-            <rect x="335.89" y="-6.4" width="78.4" height="19.6" fill="green" stroke="#c3d9ff" pointer-events="all" />
+            <rect x="335.89" y="-6.4" width="78.4" height="19.6" :fill="color[0]" stroke="#c3d9ff" pointer-events="all" />
          </g>
          <g style=" visibility: visible;">
             <g fill="black" font-family="Arial,Helvetica" text-anchor="middle" font-size="10.78px">
@@ -16,7 +16,7 @@
          </g>
          <g style="visibility: visible; " transform="translate(0.5,0.5)">
             <rect x="179.09" y="32.8" width="392" height="19.6" fill="gray" stroke="gray" transform="translate(1.96,2.94)" opacity="1" />
-            <rect x="179.09" y="32.8" width="392" height="19.6" fill="green" stroke="#c3d9ff" pointer-events="all" />
+            <rect x="179.09" y="32.8" width="392" height="19.6" :fill="color[1]" stroke="#c3d9ff" pointer-events="all" />
          </g>
          <g style=" visibility: visible;">
             <g fill="black" font-family="Arial,Helvetica" text-anchor="middle" font-size="10.78px">
@@ -25,7 +25,7 @@
          </g>
          <g style="visibility: visible; " transform="translate(0.5,0.5)">
             <rect x="179.09" y="101.4" width="392" height="29.4" fill="gray" stroke="gray" transform="translate(1.96,2.94)" opacity="1" />
-            <rect x="179.09" y="101.4" width="392" height="29.4" fill="green" stroke="#c3d9ff" pointer-events="all" />
+            <rect x="179.09" y="101.4" width="392" height="29.4" :fill="color[3]" stroke="#c3d9ff" pointer-events="all" />
          </g>
          <g style=" visibility: visible;">
             <g fill="black" font-family="Arial,Helvetica" text-anchor="middle" font-size="10.78px">
@@ -35,7 +35,7 @@
          </g>
          <g style="visibility: visible; " transform="translate(0.5,0.5)">
             <path d="M 374.6 150.4 L 421.15 184.7 L 374.6 219 L 328.05 184.7 Z" fill="gray" stroke="gray" stroke-miterlimit="10" transform="translate(1.96,2.94)" opacity="1" />
-            <path d="M 374.6 150.4 L 421.15 184.7 L 374.6 219 L 328.05 184.7 Z" fill="green" stroke="#ffcf8a" stroke-miterlimit="10" pointer-events="all" />
+            <path d="M 374.6 150.4 L 421.15 184.7 L 374.6 219 L 328.05 184.7 Z" :fill="color[4]" stroke="#ffcf8a" stroke-miterlimit="10" pointer-events="all" />
          </g>
          <g style=" visibility: visible;">
             <g fill="black" font-family="Arial,Helvetica" text-anchor="middle" font-size="10.78px">
@@ -44,7 +44,7 @@
          </g>
          <g style="visibility: visible; " transform="translate(0.5,0.5)">
             <rect x="179.09" y="62.2" width="392" height="19.6" fill="gray" stroke="gray" transform="translate(1.96,2.94)" opacity="1" />
-            <rect x="179.09" y="62.2" width="392" height="19.6" fill="green" stroke="#c3d9ff" pointer-events="all" />
+            <rect x="179.09" y="62.2" width="392" height="19.6" :fill="color[2]" stroke="#c3d9ff" pointer-events="all" />
          </g>
          <g style=" visibility: visible;">
             <g fill="black" font-family="Arial,Helvetica" text-anchor="middle" font-size="10.78px">
@@ -68,7 +68,7 @@
          </g>
          <g style="visibility: visible; " transform="translate(0.5,0.5)">
             <path d="M 375.09 297.4 L 419.19 326.8 L 375.09 356.2 L 330.99 326.8 Z" fill="gray" stroke="gray" stroke-miterlimit="10" transform="translate(1.96,2.94)" opacity="1" />
-            <path d="M 375.09 297.4 L 419.19 326.8 L 375.09 356.2 L 330.99 326.8 Z" fill="green" stroke="#ffcf8a" stroke-miterlimit="10" pointer-events="all" />
+            <path d="M 375.09 297.4 L 419.19 326.8 L 375.09 356.2 L 330.99 326.8 Z" :fill="color[7]" stroke="#ffcf8a" stroke-miterlimit="10" pointer-events="all" />
          </g>
          <g style=" visibility: visible;">
             <g fill="black" font-family="Arial,Helvetica" text-anchor="middle" font-size="10.78px">
@@ -88,7 +88,7 @@
          </g>
          <g style="visibility: visible; " transform="translate(0.5,0.5)">
             <rect x="179.09" y="238.6" width="392" height="19.6" fill="gray" stroke="gray" transform="translate(1.96,2.94)" opacity="1" />
-            <rect x="179.09" y="238.6" width="392" height="19.6" fill="green" stroke="#c3d9ff" pointer-events="all" />
+            <rect x="179.09" y="238.6" width="392" height="19.6" :fill="color[5]" stroke="#c3d9ff" pointer-events="all" />
          </g>
          <g style=" visibility: visible;">
             <g fill="black" font-family="Arial,Helvetica" text-anchor="middle" font-size="10.78px">
@@ -102,7 +102,7 @@
          </g>
          <g style="visibility: visible; " transform="translate(0.5,0.5)">
             <rect x="179.09" y="268" width="392" height="19.6" fill="gray" stroke="gray" transform="translate(1.96,2.94)" opacity="1" />
-            <rect x="179.09" y="268" width="392" height="19.6" fill="green" stroke="#c3d9ff" pointer-events="all" />
+            <rect x="179.09" y="268" width="392" height="19.6" :fill="color[6]" stroke="#c3d9ff" pointer-events="all" />
          </g>
          <g style=" visibility: visible;">
             <g fill="black" font-family="Arial,Helvetica" text-anchor="middle" font-size="10.78px">
@@ -137,14 +137,14 @@
          </g>
          <g style="visibility: visible; " transform="translate(0.5,0.5)">
             <rect x="335.89" y="375.8" width="78.4" height="19.6" fill="gray" stroke="gray" transform="translate(1.96,2.94)" opacity="1" />
-            <rect x="335.89" y="375.8" width="78.4" height="19.6" fill="green" stroke="#c3d9ff" pointer-events="all" />
+            <rect x="335.89" y="375.8" width="78.4" height="19.6" :fill="color[8]" stroke="#c3d9ff" pointer-events="all" />
          </g>
          <g style=" visibility: visible;">
             <g fill="black" font-family="Arial,Helvetica" text-anchor="middle" font-size="10.78px">
                <text x="374.59" y="388.53">Stop</text>
             </g>
          </g>
-         <g style="visibility: visible;" transform="translate(0.5,0.5)">
+         <g style="visibility: visible;" transform="translate(0.5,0.5)" >
             <path d="M 375 356.14 L 375 361.07 Q 375 366 375 367.78 L 375 369.56" fill="none" stroke="green" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9" />
             <path d="M 375 356.14 L 375 361.07 Q 375 366 375 367.78 L 375 369.56" fill="none" stroke="#36393d" stroke-miterlimit="10" />
             <path d="M 375 374.7 L 371.57 367.84 L 375 369.56 L 378.43 367.84 Z" fill="#36393d" stroke="#36393d" stroke-miterlimit="10" pointer-events="all" />
@@ -163,7 +163,13 @@
   export default {
     data() {
       return {}
-    }
+    },
+    computed:{
+        color(){
+               return this.$store.getters.getFarbe
+        }
+    },
+
   
   }
 </script>

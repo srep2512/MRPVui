@@ -22,7 +22,9 @@
 	    </div>
           <button class="primary" @click="gesamtLauf">Gesamtlauf</button>
 		  <button class="primary" @click="weiter">Weiter</button>
-          <button class="primary" >Reset</button>
+          <button class="primary" @click="reset">Reset</button>
+          <h1>{{step}}</h1>
+          <p>{{actual}}</p>
         </div>
          
         
@@ -53,7 +55,7 @@
     },
   
     mounted() {	
-        this.$store.dispatch('loadSchritte')
+        this.$store.dispatch('loadStepAlg')
 	    gantt.config.scale_unit= "month";
 		gantt.config.step = 5; 
         gantt.init("gantt_here");
@@ -67,17 +69,49 @@
         },
         ok(){
          return true;
+        },
+        step(){
+        return this.$store.getters.displayStep
+        },
+        actual(){
+        return this.$store.getters.displaySchritteverplant
         }
     },
   
     methods: {
-      gesamtLauf() {       
-		gantt.parse(this.$store.getters.displaySchritteverplant);
-		gantt.render();
+      gesamtLauf() {
+      this.$store.dispatch('reset')
+      gantt.clearAll();
+      var allSteps = this.$store.getters.displayAlgorithmusSchritte;
+
+      var filteredSteps = allSteps.data.filter((x,i,arr)=>{
+          if(x.Schritt)return x.Schritt
+      })
+      var s = filteredSteps.map((x,i)=>{
+      this.$store.dispatch('addStep',x.Schritt)
+      gantt.parse(this.$store.getters.displaySchritteverplant)
+      gantt.render()
+      })
+
       },
       weiter() {
-		 this.$store.dispatch('changeColor')
-      }	  
+         var step = this.$store.getters.displayStep;
+         var AlgSteps = this.$store.getters.displayAlgorithmusSchritte;
+         var k;
+
+         if(k = AlgSteps.data[step].Schritt){
+            console.log(JSON.stringify(k));
+            this.$store.dispatch('addStep', k)
+            gantt.parse(this.$store.getters.displaySchritteverplant);
+            gantt.render();
+         }
+         var step = this.$store.getters.displayStep;
+		 this.$store.dispatch('changeColor', step)
+      },
+      reset(){
+          this.$store.dispatch('reset')
+          gantt.clearAll();
+      }
 	  
 	  
     },
