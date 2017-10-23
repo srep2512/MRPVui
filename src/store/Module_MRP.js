@@ -29,11 +29,10 @@ const moduleMRPStore = {
             });
         },
         CCOLOR(state, step){
-            state.step = step;
             state.Farbe = state.Farbe.map((x,i)=> i==step? x = "red":x="green");
-            state.step++;
         },
-        ADD(state,step){state.Schritteverplant.data.push(step)},
+        ADDSTEP(state){state.step++;},
+        UPDATE(state,step){state.Schritteverplant.data = step},
         RESET(state){
             state.step = 0;
             state.Schritteverplant.data = [];
@@ -60,9 +59,10 @@ const moduleMRPStore = {
         changeColor({commit},id){
         	commit('CCOLOR',id)
         },
-        addStep({commit},step){
-            commit('ADD',step)
+        update({commit},steps){
+            commit('UPDATE',steps)
         },
+        incStep({commit}){commit('ADDSTEP')},
         reset({commit}){
             commit('RESET')
         }
