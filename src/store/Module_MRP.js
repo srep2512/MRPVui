@@ -21,7 +21,7 @@ const moduleMRPStore = {
         LOAD_STEPS(state, steps) {
             //Gesamte Schritte speichern
             state.AlgorithmusSchritte = steps
-            state.Schritteverplant.data =[]
+            state.Schritteverplant.data = []
             //Maschinen laden
             steps.data.filter((x,i,arr)=>{
                 if(x.text.match("^M")){

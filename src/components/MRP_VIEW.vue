@@ -41,6 +41,7 @@
     },
   
     mounted() {
+
         this.$store.dispatch('loadStepAlg')
     },
   

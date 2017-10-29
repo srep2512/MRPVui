@@ -20,11 +20,13 @@ export default {
    data(){
       return this.$props.tasks
    },
+   computed(){
+
+   },
   mounted() {
-    gantt.config.open_tree_initially = true;
+    gantt.config.open_tree_initially = false;
     gantt.config.autosize = "y";
     gantt.init(this.$refs.gantt)
-    gantt.parse(this.$props.tasks)
   },
   watch:{
     data:function(val, old){
