@@ -40,7 +40,7 @@
       }  
     },
   
-    mounted() {	
+    mounted() {
         this.$store.dispatch('loadStepAlg')
     },
   
@@ -95,9 +95,6 @@
     	Giffler,
     	MaschinGant
     }
-  
-  
-  
   
   
   }
