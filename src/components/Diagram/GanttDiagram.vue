@@ -1,6 +1,6 @@
 <template>
 <div >
-    <div  style="height: 150px;" ref="gantt"></div>
+    <div class="dia" ref="gantt"></div>
 </div>
 
 </template>
@@ -25,7 +25,7 @@ export default {
    },
   mounted() {
     gantt.config.open_tree_initially = false;
-    gantt.config.autosize = "y";
+
     gantt.init(this.$refs.gantt)
   },
   watch:{
@@ -43,5 +43,7 @@ export default {
 
 <style>
     @import "~dhtmlx-gantt/codebase/dhtmlxgantt.css";
-
+.dia{
+    height:300px;
+}
 </style>

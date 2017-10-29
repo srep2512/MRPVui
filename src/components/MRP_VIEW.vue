@@ -1,26 +1,36 @@
 <template>
   <div class="container">
-    <!-- Projekt anlegen button im Headbereich-->
+   <!-- GanttCard -->
+  <div class="card col">
+
+            <div class="card-content">
+                    <MaschinGant :tasks="actual"></MaschinGant>
+                    <button class="primary" @click="gesamtLauf">Gesamtlauf</button>
+                    <button class="primary" @click="weiter">Weiter</button>
+                    <button class="primary" @click="reset">Reset</button>
+          </div>
+      </div>
+    <!-- KonsolenCard -->
     <div class="card">
-      <div class="card-title">  
-        <h3>MRP-Lauf nach Algorithmus</h3>
-      </div>
-      <div class="card-content">
-        <div>
+         <div class="card-content">
+             <div class="card col">
+                <div class="card-content">
+                <div class="shell-wrap">
+                        <p class="shell-top-bar">MRP Lauf was passiert</p>
+                        <ul class="shell-body">
+                           <li v-for="item in konsolenListe">
+                              {{item.text}}
+                           </li>
+                        </ul>
+                      </div>
+                </div>
+             </div>
 
-	    
-	      <MaschinGant :tasks="actual"></MaschinGant>
-
-          <button class="primary" @click="gesamtLauf">Gesamtlauf</button>
-		  <button class="primary" @click="weiter">Weiter</button>
-          <button class="primary" @click="reset">Reset</button>
-
-        </div>
-      </div>
+            </div>
     </div>
-  
-    </div>
-  
+
+
+
   </div>
 </template>
 
@@ -41,7 +51,6 @@
     },
   
     mounted() {
-
         this.$store.dispatch('loadStepAlg')
     },
   
@@ -57,6 +66,9 @@
         },
         actual(){
         return this.$store.getters.displaySchritteverplant
+        },
+        konsolenListe(){
+        return this.$store.getters.displayAlgorithmusSchritteBis
         }
     },
   
@@ -64,7 +76,7 @@
       gesamtLauf() {
       this.$store.dispatch('reset')
       var allSteps = this.$store.getters.displayAlgorithmusSchritte;
-
+      this.$store.dispatch('updateBIS',allSteps.data)
       var maschines = allSteps.data.filter((x,i)=>{return x.text.match("^Ma")});
       var onlySteps = allSteps.data.filter((x,i)=>{return x.Schritt}).map(x=>x.Schritt);
       var res = onlySteps.concat(maschines)
@@ -76,21 +88,24 @@
          var AlgSteps = this.$store.getters.displayAlgorithmusSchritte;
 
          var AlgStepsUntil = AlgSteps.data.filter((x,i)=> i<= step);
+         this.$store.dispatch('updateBIS',AlgStepsUntil)
+
+
+
          var onlySteps = AlgStepsUntil.filter((x) => {return x.Schritt})
          .map(x =>x.Schritt)
          var maschines = AlgSteps.data.filter((x,i)=>{return x.text.match("^Ma")});
-        var res = onlySteps.concat(maschines)
+         var res = onlySteps.concat(maschines)
          this.$store.dispatch('update',res)
          this.$store.dispatch('changeColor', AlgSteps.data[step].id)
   		 this.$store.dispatch('incStep')
+
+
       },
       reset(){
           this.$store.dispatch('reset')
           gantt.render();
       }
-
-
-	  
     },
     components:{
     	Giffler,
@@ -101,5 +116,12 @@
   }
 </script>
 
+<style>
+ @import "./css/console.css";
+
+ .container{
+ display:flex;
+ }
+</style>
 
 

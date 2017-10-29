@@ -7,11 +7,13 @@ const moduleMRPStore = {
         step: 0,
 		Schritteverplant: {data:[]},
         AlgorithmusSchritte: [],
+        AlgorithmusSchritteBis:[],
         Farbe:["green","green","green","green","green","green","green","green","green","green"],
     },
     getters: {
         displayedAuftraege: state => state.Produktionsauftrage,
         displayAlgorithmusSchritte: state => state.AlgorithmusSchritte,
+        displayAlgorithmusSchritteBis: state => state.AlgorithmusSchritteBis,
         displaySchritteverplant: state => state.Schritteverplant,
         displayStep: state => state.step,
         getFarbe: state => state.Farbe,
@@ -34,9 +36,11 @@ const moduleMRPStore = {
         },
         ADDSTEP(state){state.step++;},
         UPDATE(state,step){state.Schritteverplant.data = step},
+        UPDATEBIS(state,step){state.AlgorithmusSchritteBis = step},
         RESET(state){
             state.step = 0;
             state.Schritteverplant.data = [];
+            state.AlgorithmusSchritteBis = [];
             state.AlgorithmusSchritte.data.filter((x,i,arr)=>{
                             if(x.text.match("^M")){
                                state.Schritteverplant.data.push(x)
@@ -66,6 +70,9 @@ const moduleMRPStore = {
         incStep({commit}){commit('ADDSTEP')},
         reset({commit}){
             commit('RESET')
+        },
+        updateBIS({commit},steps){
+            commit('UPDATEBIS',steps)
         }
     }
 }
