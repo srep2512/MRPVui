@@ -25,7 +25,7 @@
                       </div>
                 </div>
              </div>
-
+            <Giffler></Giffler>
             </div>
     </div>
 
